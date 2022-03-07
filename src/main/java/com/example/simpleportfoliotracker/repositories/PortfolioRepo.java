@@ -10,7 +10,7 @@ public interface PortfolioRepo extends JpaRepository<PortfolioModel, Long> {
 
     List<PortfolioModel> findByUsername(String username);
 
-    Optional<PortfolioModel> findAllBySymbol(String symbol);
+//    Optional<PortfolioModel> findSymbolByUsername(String symbol, );
 
     PortfolioModel findBySymbol(String symbol);
 

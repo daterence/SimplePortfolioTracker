@@ -72,9 +72,7 @@ public class PortfolioRestController {
     @PostMapping
     public ResponseEntity<String> addSymbol(@RequestBody AddNewSymbol symbol,
                             @PathVariable String username) {
-        logger.info("SYMBOL RECEIVED " + symbol.getSymbol());
-//        logger.info("SYMBOL RECEIVED " + symbol.getQuantity());
-//        logger.info("SYMBOL RECEIVED " + symbol.getUnit_price());
+        logger.info(username);
         List<GetPortfolio> current1 = new LinkedList<>();
         List<PortfolioModel> portfolioModelList = portfolioSvc.addNewSymbolToPortfolio(symbol, username);
 
@@ -96,6 +94,7 @@ public class PortfolioRestController {
     @DeleteMapping
     public ResponseEntity<String> deleteSymbol(@PathVariable String username,
                                                @RequestParam String symbol){
+        logger.info("DELETING >> " + symbol);
         PortfolioModel delete = portfolioSvc.getSymbolByUsernameAndSymbol(username, symbol);
         portfolioSvc.deleteSymbol(delete.getId());
 

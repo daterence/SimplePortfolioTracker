@@ -28,8 +28,8 @@ public class PortfolioService {
 
     // check if symbol already exist in user portfolio
     public List<PortfolioModel> addNewSymbolToPortfolio(AddNewSymbol addNewSymbol, String username) {
-//        if (!portfolioRepo.findByUsernameAndSymbol(username, addNewSymbol.getSymbol()).isPresent()) {
-        if (!portfolioRepo.findAllBySymbol(addNewSymbol.getSymbol()).isPresent()) {
+        if (!portfolioRepo.findByUsernameAndSymbol(username, addNewSymbol.getSymbol()).isPresent()) {
+//        if (!portfolioRepo.findAllBySymbol(addNewSymbol.getSymbol()).isPresent()) {
             logger.info("Finding all symbol");
             addNewSymbol(addNewSymbol, username);
 
